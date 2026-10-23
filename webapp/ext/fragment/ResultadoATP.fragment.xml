@@ -1,0 +1,281 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:layout="sap.ui.layout">
+
+    <Dialog
+        id="resultadoATPDialog"
+        title="Verificação ATP concluída"
+        contentWidth="1000px"
+        contentHeight="650px"
+        resizable="true"
+        draggable="true"
+        stretchOnPhone="true">
+
+        <content>
+
+            <VBox
+                width="100%"
+                class="sapUiMediumMargin">
+
+                <MessageStrip
+                    text="A verificação ATP foi concluída. Consulte abaixo o resumo e o resultado de cada pedido."
+                    type="Information"
+                    showIcon="true"
+                    showCloseButton="false"
+                    class="sapUiMediumMarginBottom"/>
+
+                <Title
+                    text="Resumo da verificação"
+                    level="H3"
+                    class="sapUiSmallMarginBottom"/>
+
+                <layout:Grid
+                    width="100%"
+                    defaultSpan="XL3 L3 M6 S12"
+                    hSpacing="1"
+                    vSpacing="1"
+                    class="sapUiMediumMarginBottom">
+
+                    <!-- Total processado -->
+                    <VBox
+                        width="100%"
+                        class="sapUiContentPadding">
+
+                        <HBox
+                            alignItems="Center"
+                            class="sapUiTinyMarginBottom">
+
+                            <core:Icon
+                                src="sap-icon://multi-select"
+                                size="1.25rem"
+                                class="sapUiTinyMarginEnd"/>
+
+                            <Title
+                                text="Total processado"
+                                level="H5"/>
+
+                        </HBox>
+
+                        <ObjectNumber
+                            number="{resultadoATP>/resumo/total}"
+                            unit="pedidos"
+                            emphasized="true"
+                            state="None"
+                            class="sapUiTinyMarginBottom"/>
+
+                        <ProgressIndicator
+                            percentValue="100"
+                            displayValue="100%"
+                            state="None"
+                            width="100%"/>
+
+                    </VBox>
+
+                    <!-- Confirmados -->
+                    <VBox
+                        width="100%"
+                        class="sapUiContentPadding">
+
+                        <HBox
+                            alignItems="Center"
+                            class="sapUiTinyMarginBottom">
+
+                            <core:Icon
+                                src="sap-icon://message-success"
+                                size="1.25rem"
+                                color="#107E3E"
+                                class="sapUiTinyMarginEnd"/>
+
+                            <Title
+                                text="Confirmados"
+                                level="H5"/>
+
+                        </HBox>
+
+                        <ObjectNumber
+                            number="{resultadoATP>/resumo/confirmados}"
+                            unit="pedidos"
+                            emphasized="true"
+                            state="Success"
+                            class="sapUiTinyMarginBottom"/>
+
+                        <ProgressIndicator
+                            percentValue="{resultadoATP>/resumo/percentualConfirmados}"
+                            displayValue="{resultadoATP>/resumo/textoPercentualConfirmados}"
+                            state="Success"
+                            width="100%"/>
+
+                    </VBox>
+
+                    <!-- Parciais -->
+                    <VBox
+                        width="100%"
+                        class="sapUiContentPadding">
+
+                        <HBox
+                            alignItems="Center"
+                            class="sapUiTinyMarginBottom">
+
+                            <core:Icon
+                                src="sap-icon://message-warning"
+                                size="1.25rem"
+                                color="#E9730C"
+                                class="sapUiTinyMarginEnd"/>
+
+                            <Title
+                                text="Parciais"
+                                level="H5"/>
+
+                        </HBox>
+
+                        <ObjectNumber
+                            number="{resultadoATP>/resumo/parciais}"
+                            unit="pedidos"
+                            emphasized="true"
+                            state="Warning"
+                            class="sapUiTinyMarginBottom"/>
+
+                        <ProgressIndicator
+                            percentValue="{resultadoATP>/resumo/percentualParciais}"
+                            displayValue="{resultadoATP>/resumo/textoPercentualParciais}"
+                            state="Warning"
+                            width="100%"/>
+
+                    </VBox>
+
+                    <!-- Não confirmados -->
+                    <VBox
+                        width="100%"
+                        class="sapUiContentPadding">
+
+                        <HBox
+                            alignItems="Center"
+                            class="sapUiTinyMarginBottom">
+
+                            <core:Icon
+                                src="sap-icon://message-error"
+                                size="1.25rem"
+                                color="#BB0000"
+                                class="sapUiTinyMarginEnd"/>
+
+                            <Title
+                                text="Não confirmados"
+                                level="H5"/>
+
+                        </HBox>
+
+                        <ObjectNumber
+                            number="{resultadoATP>/resumo/naoConfirmados}"
+                            unit="pedidos"
+                            emphasized="true"
+                            state="Error"
+                            class="sapUiTinyMarginBottom"/>
+
+                        <ProgressIndicator
+                            percentValue="{resultadoATP>/resumo/percentualNaoConfirmados}"
+                            displayValue="{resultadoATP>/resumo/textoPercentualNaoConfirmados}"
+                            state="Error"
+                            width="100%"/>
+
+                    </VBox>
+
+                </layout:Grid>
+
+                <Toolbar
+                    design="Transparent"
+                    class="sapUiSmallMarginBottom">
+
+                    <Title
+                        text="Resultado por pedido"
+                        level="H3"/>
+
+                    <ToolbarSpacer/>
+
+                    <ObjectStatus
+                        text="{resultadoATP>/resumo/textoResultadoGeral}"
+                        state="{resultadoATP>/resumo/estadoResultadoGeral}"/>
+
+                </Toolbar>
+
+                <Table
+                    width="100%"
+                    items="{resultadoATP>/resultados}"
+                    growing="true"
+                    growingThreshold="20"
+                    sticky="ColumnHeaders"
+                    noDataText="Nenhum resultado encontrado">
+
+                    <columns>
+
+                        <Column width="11rem">
+                            <Text
+                                text="Pedido"
+                                design="Bold"/>
+                        </Column>
+
+                        <Column width="12rem">
+                            <Text
+                                text="Status ATP"
+                                design="Bold"/>
+                        </Column>
+
+                        <Column>
+                            <Text
+                                text="Mensagem"
+                                design="Bold"/>
+                        </Column>
+
+                    </columns>
+
+                    <items>
+
+                        <ColumnListItem
+                            type="Inactive"
+                            vAlign="Middle"
+                            highlight="{resultadoATP>estado}">
+
+                            <cells>
+
+                                <ObjectIdentifier
+                                    title="{resultadoATP>pedido}"/>
+
+                                <ObjectStatus
+                                    text="{resultadoATP>status}"
+                                    state="{resultadoATP>estado}"/>
+
+                                <Text
+                                    text="{resultadoATP>mensagem}"
+                                    wrapping="true"/>
+
+                            </cells>
+
+                        </ColumnListItem>
+
+                    </items>
+
+                </Table>
+
+            </VBox>
+
+        </content>
+
+        <buttons>
+
+            <Button
+                text="Exportar para Excel"
+                icon="sap-icon://excel-attachment"
+                type="Transparent"
+                press=".onExportarResultadoATP"
+                tooltip="Exportar o resultado da verificação ATP"/>
+
+            <Button
+                text="Fechar"
+                type="Emphasized"
+                press=".onFecharResultadoATP"/>
+
+        </buttons>
+
+    </Dialog>
+
+</core:FragmentDefinition>

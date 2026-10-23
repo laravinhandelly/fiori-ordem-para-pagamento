@@ -1,0 +1,246 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:layout="sap.ui.layout">
+
+    <Dialog
+        id="tempoProcessoDialog"
+        title="Controle de tempo do processo"
+        contentWidth="900px"
+        contentHeight="620px"
+        resizable="true"
+        draggable="true"
+        stretchOnPhone="true"
+        afterClose=".onDepoisFecharTempoProcesso">
+
+        <content>
+
+            <VBox
+                width="100%"
+                class="sapUiMediumMargin">
+
+                <MessageStrip
+                    text="Informe a data e a hora de modificação. A duração será recalculada automaticamente."
+                    type="Information"
+                    showIcon="true"
+                    showCloseButton="false"
+                    class="sapUiMediumMarginBottom"/>
+
+                <!-- Cabeçalho do pedido -->
+                <HBox
+                    width="100%"
+                    justifyContent="SpaceBetween"
+                    alignItems="Center"
+                    wrap="Wrap"
+                    class="sapUiMediumMarginBottom">
+
+                    <VBox class="sapUiSmallMarginBottom">
+
+                        <Label
+                            text="Pedido de venda"
+                            design="Bold"/>
+
+                        <ObjectIdentifier
+                            title="{tempoProcesso>/PedidoVenda}"
+                            text="Sequência atual: {tempoProcesso>/Sequencia}"/>
+
+                    </VBox>
+
+                    <ObjectStatus
+                        text="{tempoProcesso>/StatusRegistro}"
+                        state="{tempoProcesso>/EstadoRegistro}"
+                        icon="{tempoProcesso>/IconeRegistro}"
+                        class="sapUiSmallMarginBottom"/>
+
+                </HBox>
+
+                <!-- Cards informativos -->
+                <layout:Grid
+                    width="100%"
+                    defaultSpan="XL4 L4 M6 S12"
+                    hSpacing="1"
+                    vSpacing="1"
+                    class="sapUiMediumMarginBottom">
+
+                    <VBox class="sapUiContentPadding">
+
+                        <HBox
+                            alignItems="Center"
+                            class="sapUiTinyMarginBottom">
+
+                            <core:Icon
+                                src="sap-icon://calendar"
+                                size="1.25rem"
+                                class="sapUiTinyMarginEnd"/>
+
+                            <Title
+                                text="Criação do pedido"
+                                level="H5"/>
+
+                        </HBox>
+
+                        <ObjectAttribute
+                            title="Data"
+                            text="{tempoProcesso>/DataCriacaoExibicao}"/>
+
+                        <ObjectAttribute
+                            title="Hora"
+                            text="{tempoProcesso>/HoraCriacaoExibicao}"/>
+
+                        <ObjectAttribute
+                            title="Criado por"
+                            text="{tempoProcesso>/CriadoPor}"/>
+
+                    </VBox>
+
+                    <VBox class="sapUiContentPadding">
+
+                        <HBox
+                            alignItems="Center"
+                            class="sapUiTinyMarginBottom">
+
+                            <core:Icon
+                                src="sap-icon://edit"
+                                size="1.25rem"
+                                class="sapUiTinyMarginEnd"/>
+
+                            <Title
+                                text="Modificação"
+                                level="H5"/>
+
+                        </HBox>
+
+                        <ObjectAttribute
+                            title="Data"
+                            text="{tempoProcesso>/DataModificacaoExibicao}"/>
+
+                        <ObjectAttribute
+                            title="Hora"
+                            text="{tempoProcesso>/HoraModificacaoExibicao}"/>
+
+                        <ObjectAttribute
+                            title="Modificado por"
+                            text="{tempoProcesso>/ModificadoPor}"/>
+
+                    </VBox>
+
+                    <VBox class="sapUiContentPadding">
+
+                        <HBox
+                            alignItems="Center"
+                            class="sapUiTinyMarginBottom">
+
+                            <core:Icon
+                                src="sap-icon://time-entry-request"
+                                size="1.25rem"
+                                class="sapUiTinyMarginEnd"/>
+
+                            <Title
+                                text="Tempo decorrido"
+                                level="H5"/>
+
+                        </HBox>
+
+                        <ObjectNumber
+                            number="{tempoProcesso>/DuracaoExtenso}"
+                            emphasized="true"
+                            state="{tempoProcesso>/EstadoDuracao}"/>
+
+                        <ObjectAttribute
+                            title="Total em segundos"
+                            text="{tempoProcesso>/DuracaoSegundos}"/>
+
+                    </VBox>
+
+                </layout:Grid>
+
+                <Title
+                    text="Atualizar controle de tempo"
+                    level="H3"
+                    class="sapUiSmallMarginBottom"/>
+
+                <form:SimpleForm
+                    editable="true"
+                    layout="ResponsiveGridLayout"
+                    labelSpanXL="3"
+                    labelSpanL="3"
+                    labelSpanM="4"
+                    labelSpanS="12"
+                    adjustLabelSpan="false"
+                    emptySpanXL="1"
+                    emptySpanL="1"
+                    emptySpanM="0"
+                    emptySpanS="0"
+                    columnsXL="2"
+                    columnsL="2"
+                    columnsM="1"
+                    singleContainerFullSize="false">
+
+                    <Label
+                        text="Data de modificação"
+                        required="true"/>
+
+                    <DatePicker
+                        id="dataModificacaoTempo"
+                        value="{tempoProcesso>/DataModificacaoInput}"
+                        valueFormat="yyyy-MM-dd"
+                        displayFormat="dd/MM/yyyy"
+                        change=".onAlterarDataHoraTempo"
+                        width="100%"/>
+
+                    <Label
+                        text="Hora de modificação"
+                        required="true"/>
+
+                    <TimePicker
+                        id="horaModificacaoTempo"
+                        value="{tempoProcesso>/HoraModificacaoInput}"
+                        valueFormat="HH:mm:ss"
+                        displayFormat="HH:mm"
+                        change=".onAlterarDataHoraTempo"
+                        width="100%"/>
+
+                    <Label text="Duração calculada"/>
+
+                    <Input
+                        value="{tempoProcesso>/DuracaoCalculadaPreview}"
+                        editable="false"
+                        valueState="{tempoProcesso>/ValueStateDuracao}"
+                        valueStateText="{tempoProcesso>/MensagemDuracao}"
+                        width="100%"/>
+
+                    <Label text="Último registro"/>
+
+                    <Text
+                        text="{tempoProcesso>/RegistradoEmExibicao}"
+                        wrapping="true"/>
+
+                </form:SimpleForm>
+
+            </VBox>
+
+        </content>
+
+        <beginButton>
+
+            <Button
+                text="Salvar"
+                type="Emphasized"
+                icon="sap-icon://save"
+                press=".onSalvarTempoProcesso"
+                enabled="{tempoProcesso>/PodeSalvar}"/>
+
+        </beginButton>
+
+        <endButton>
+
+            <Button
+                text="Cancelar"
+                press=".onFecharTempoProcesso"/>
+
+        </endButton>
+
+    </Dialog>
+
+</core:FragmentDefinition>

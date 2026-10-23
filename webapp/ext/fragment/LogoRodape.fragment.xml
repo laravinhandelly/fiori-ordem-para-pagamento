@@ -1,0 +1,11 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <HBox alignItems="Center" class="sapUiTinyMarginBottom sapUiTinyMarginTop">
+        <Image 
+            src="/sap/bc/ui5_ui5/sap/zui5ordemcash/images/Logo2.jpg" 
+            width="120px" 
+            class="sapUiTinyMarginEnd" 
+            tooltip="Aggire Logo" />
+    </HBox>
+</core:FragmentDefinition>

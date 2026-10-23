@@ -1,0 +1,1311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://ndc-srvhana.opus-idc.com.br:8100/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ndc-srvhana.opus-idc.com.br:8100/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ndc-srvhana.opus-idc.com.br:8100/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ndc-srvhana.opus-idc.com.br:8100/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ndc-srvhana.opus-idc.com.br:8100/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ndc-srvhana.opus-idc.com.br:8100/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ndc-srvhana.opus-idc.com.br:8100/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ndc-srvhana.opus-idc.com.br:8100/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ndc-srvhana.opus-idc.com.br:8100/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ndc-srvhana.opus-idc.com.br:8100/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ndc-srvhana.opus-idc.com.br:8100/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ndc-srvhana.opus-idc.com.br:8100/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="cds_zui_sd_otc_monitor" xml:lang="pt" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="DisponibilidadeType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PedidoVenda"/>
+                    <PropertyRef Name="ItemPedidoVenda"/>
+                    <PropertyRef Name="DivisaoRemessa"/>
+                </Key>
+                <Property Name="PedidoVenda" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Documento de vendas" sap:heading="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ItemPedidoVenda" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="Item" sap:heading="" sap:quickinfo="Item do documento de vendas"/>
+                <Property Name="DivisaoRemessa" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Nº div.remessa" sap:heading="" sap:quickinfo="Nº da divisão de remessa"/>
+                <Property Name="Material" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Material" sap:heading="" sap:quickinfo="Nº do material"/>
+                <Property Name="DescricaoMaterial" Type="Edm.String" MaxLength="40" sap:label="Texto breve material" sap:heading="" sap:quickinfo="Texto breve de material"/>
+                <Property Name="DescricaoItem" Type="Edm.String" MaxLength="40" sap:label="Denominação de item" sap:heading="" sap:quickinfo="Texto breve do item da ordem do cliente"/>
+                <Property Name="Centro" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Centro" sap:heading="" sap:quickinfo="Centro (próprio ou externo)"/>
+                <Property Name="Deposito" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Depósito" sap:heading=""/>
+                <Property Name="QuantidadeSolicitada" Type="Edm.Decimal" Precision="15" Scale="3" sap:unit="VRKME" sap:label="Qtd.ordem" sap:heading="" sap:quickinfo="Quantidade da ordem acumulada em unidade de venda"/>
+                <Property Name="VRKME" Type="Edm.String" MaxLength="3" sap:label="Unidade de venda" sap:heading="" sap:semantics="unit-of-measure"/>
+                <Property Name="DataEntregaSolicitada" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Data de remessa" sap:heading="" sap:quickinfo="Data de divisão da remessa"/>
+                <Property Name="QuantidadeSolicitadaDivisao" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="VRKME" sap:label="Qtd.ordem" sap:heading="" sap:quickinfo="Quantidade da ordem em unidades de venda"/>
+                <Property Name="QuantidadeConfirmada" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="VRKME" sap:label="Qtd.confirmada" sap:heading="" sap:quickinfo="Quantidade confirmada"/>
+                <Property Name="QuantidadePendente" Type="Edm.Decimal" Precision="15" Scale="3" sap:unit="VRKME" sap:label=""/>
+                <Property Name="StatusATP" Type="Edm.String" MaxLength="20" sap:label=""/>
+                <Property Name="PercentualConfirmado" Type="Edm.Decimal" Precision="7" Scale="2" sap:label=""/>
+                <Property Name="IndicadorAtraso" Type="Edm.String" MaxLength="15" sap:label=""/>
+                <Property Name="CriticidadeATP" Type="Edm.Byte"/>
+                <Property Name="CriticidadeAtraso" Type="Edm.Byte"/>
+                <Property Name="CategoriaDivisaoRemessa" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Ctg.divisão remessa" sap:heading="" sap:quickinfo="Categoria de divisão de remessa"/>
+                <NavigationProperty Name="to_Overview" Relationship="cds_zui_sd_otc_monitor.assoc_A3FE093FECAFE17541314DA5BEAB3A0E" FromRole="ToRole_assoc_A3FE093FECAFE17541314DA5BEAB3A0E" ToRole="FromRole_assoc_A3FE093FECAFE17541314DA5BEAB3A0E"/>
+            </EntityType>
+            <EntityType Name="FaturamentosType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="NumeroFatura"/>
+                    <PropertyRef Name="ItemFatura"/>
+                </Key>
+                <Property Name="NumeroFatura" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Doc.faturamento" sap:heading="" sap:quickinfo="Documento de faturamento"/>
+                <Property Name="ItemFatura" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="Item" sap:heading="" sap:quickinfo="Item do documento de faturamento"/>
+                <Property Name="PedidoVenda" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Documento de vendas" sap:heading="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="NumeroEntrega" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Remessa" sap:heading=""/>
+                <Property Name="TipoFaturamento" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Tp.doc.faturamento" sap:heading="" sap:quickinfo="Tipo documento de faturamento"/>
+                <Property Name="DataFatura" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Data do faturamento" sap:heading=""/>
+                <Property Name="DataCriacao" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Criado em" sap:heading="" sap:quickinfo="Data de criação do registro"/>
+                <Property Name="Pagador" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Pagador" sap:heading=""/>
+                <Property Name="EmissorOrdem" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Emissor da ordem" sap:heading=""/>
+                <Property Name="OrganizacaoVendas" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Organização vendas" sap:heading="" sap:quickinfo="Organização de vendas"/>
+                <Property Name="Empresa" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Empresa" sap:heading=""/>
+                <Property Name="ValorLiquido" Type="Edm.Decimal" Precision="15" Scale="3" sap:unit="Moeda" sap:variable-scale="true" sap:label="Valor líquido" sap:heading="" sap:quickinfo="Valor líquido na moeda do documento"/>
+                <Property Name="Moeda" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Moeda do documento" sap:heading="" sap:quickinfo="Moeda do documento SD" sap:semantics="currency-code"/>
+                <Property Name="StatusContabil" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Status do lançamento" sap:heading="" sap:quickinfo="Status para a transferência para a contabilidade"/>
+                <Property Name="Material" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Material" sap:heading="" sap:quickinfo="Nº do material"/>
+                <Property Name="QuantidadeFaturada" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="Unidade" sap:label="Quantidade faturada" sap:heading="" sap:quickinfo="Quantidade faturada efetivamente"/>
+                <Property Name="Unidade" Type="Edm.String" MaxLength="3" sap:label="Unidade de venda" sap:heading="" sap:semantics="unit-of-measure"/>
+                <Property Name="ValorLiquidoItem" Type="Edm.Decimal" Precision="15" Scale="3" sap:unit="Moeda" sap:variable-scale="true" sap:label="Valor líquido" sap:heading="" sap:quickinfo="Valor líquido do item de faturamento em moeda do documento"/>
+                <Property Name="DocumentoFI" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Nº documento" sap:heading="" sap:quickinfo="Nº documento de um documento contábil"/>
+                <Property Name="ExercicioDocumentoFI" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Exercício" sap:heading=""/>
+                <Property Name="DataLancamentoFI" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Data de lançamento" sap:heading="" sap:quickinfo="Data de lançamento no documento"/>
+                <Property Name="DataDocumentoFI" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Data do documento" sap:heading="" sap:quickinfo="Data no documento"/>
+                <Property Name="TipoDocumentoFI" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Tipo de documento" sap:heading=""/>
+                <Property Name="ReferenciaDocumentoFI" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Referência" sap:heading="" sap:quickinfo="Nº documento de referência"/>
+                <Property Name="CriticidadeStatusContabil" Type="Edm.Byte"/>
+                <Property Name="DocumentoPrecedente" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Documento precedente" sap:quickinfo="Documento de vendas e distribuição precedente"/>
+                <Property Name="ItemDocumentoPrecedente" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Item precedente" sap:quickinfo="Item precedente de um documento SD"/>
+                <Property Name="CategoriaDocumentoPrecedente" Type="Edm.String" MaxLength="4" sap:label="Ctg.doc.precedente" sap:quickinfo="Categoria de documento SD precedente"/>
+                <Property Name="CategoriaDocumentoSubsequente" Type="Edm.String" MaxLength="4" sap:label="Ctg.doc.subsequente" sap:quickinfo="Categoria de documento subsequente"/>
+                <NavigationProperty Name="to_Overview" Relationship="cds_zui_sd_otc_monitor.assoc_582C86E155A3DF8EEC748B938E80827C" FromRole="ToRole_assoc_582C86E155A3DF8EEC748B938E80827C" ToRole="FromRole_assoc_582C86E155A3DF8EEC748B938E80827C"/>
+            </EntityType>
+            <EntityType Name="EntregasType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PedidoVenda"/>
+                    <PropertyRef Name="ItemPedidoVenda"/>
+                    <PropertyRef Name="NumeroEntrega"/>
+                    <PropertyRef Name="ItemEntrega"/>
+                </Key>
+                <Property Name="PedidoVenda" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Documento de vendas" sap:heading="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ItemPedidoVenda" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="Item" sap:heading="" sap:quickinfo="Item do documento de vendas"/>
+                <Property Name="NumeroEntrega" Type="Edm.String" Nullable="false" MaxLength="10" sap:label=""/>
+                <Property Name="ItemEntrega" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label=""/>
+                <Property Name="Material" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Material" sap:heading="" sap:quickinfo="Nº do material"/>
+                <Property Name="QuantidadeConfirmada" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="VRKMEConfirmada" sap:label=""/>
+                <Property Name="VRKMEConfirmada" Type="Edm.String" MaxLength="3" sap:label="Unidade de venda" sap:heading="" sap:semantics="unit-of-measure"/>
+                <Property Name="TipoEntrega" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Tipo de remessa" sap:heading=""/>
+                <Property Name="PontoExpedicao" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Local expedição" sap:heading="" sap:quickinfo="Local de expedição/ponto de recebimento"/>
+                <Property Name="DataSaidaPlanejada" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Dt.plan.mov.mercad." sap:heading="" sap:quickinfo="Data planejada para o movimento de mercadoria"/>
+                <Property Name="DataSaidaReal" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Dt.real mov.merc." sap:heading="" sap:quickinfo="Data real do movimento de mercadorias"/>
+                <Property Name="QuantidadeEntregue" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="VRKME" sap:label="Qtd.remessa" sap:heading="" sap:quickinfo="Quantidade fornecida de fato, em UMV"/>
+                <Property Name="VRKME" Type="Edm.String" MaxLength="3" sap:label="Unidade de venda" sap:heading="" sap:semantics="unit-of-measure"/>
+                <Property Name="Centro" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Centro" sap:heading=""/>
+                <Property Name="Deposito" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Depósito" sap:heading=""/>
+                <Property Name="Lote" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Lote" sap:heading="" sap:quickinfo="Número do lote"/>
+                <Property Name="StatusEntrega" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Status de remessa" sap:heading="" sap:quickinfo="Status de remessa (todos os itens)"/>
+                <Property Name="StatusPicking" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Status do picking" sap:heading="" sap:quickinfo="Status do picking/status entrada em depósito (todos itens)"/>
+                <Property Name="StatusPGI" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="St.mov.mercadorias" sap:heading="" sap:quickinfo="Status do movimento de mercadorias (todos os itens)"/>
+                <Property Name="BloqueioEntrega" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Bloqueio remessa" sap:heading="" sap:quickinfo="Bloqueio da remessa (cabeçalho do documento)"/>
+                <Property Name="CriticidadeEntrega" Type="Edm.Byte"/>
+                <Property Name="CriticidadePicking" Type="Edm.Byte"/>
+                <Property Name="CriticidadePGI" Type="Edm.Byte"/>
+                <Property Name="CriticidadeBloqueio" Type="Edm.Byte"/>
+                <Property Name="DataDivisaoRemessa" Type="Edm.DateTime" Precision="0" sap:display-format="Date"/>
+                <Property Name="QuantidadeSolicitadaDivisao" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="VRKMEConfirmada"/>
+                <Property Name="MotivoRejeicao" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Motivo de recusa" sap:quickinfo="Motivo para rejeição de documentos de vendas"/>
+                <Property Name="RelevanteEntrega" Type="Edm.Boolean" sap:label="Item relev.p/remessa" sap:quickinfo="Item é relevante para remessa"/>
+                <Property Name="PontoExpedicaoPedido" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Local expedição" sap:quickinfo="Local de expedição/ponto de recebimento"/>
+                <Property Name="VRKMEPedido" Type="Edm.String" MaxLength="3" sap:label="Unidade de venda" sap:semantics="unit-of-measure"/>
+                <Property Name="QuantidadePedido" Type="Edm.Decimal" Precision="15" Scale="3" sap:unit="VRKMEPedido" sap:label="Qtd.ordem" sap:quickinfo="Quantidade da ordem acumulada em unidade de venda"/>
+                <Property Name="CategoriaItem" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Categoria do item" sap:quickinfo="Categoria do item do documento de vendas e distribuição"/>
+                <Property Name="BloqueioEntregaPedido" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Bloqueio remessa" sap:quickinfo="Bloqueio da remessa (cabeçalho do documento)"/>
+                <NavigationProperty Name="to_Overview" Relationship="cds_zui_sd_otc_monitor.assoc_332227B758BCCB915185CDB128BF7D0D" FromRole="ToRole_assoc_332227B758BCCB915185CDB128BF7D0D" ToRole="FromRole_assoc_332227B758BCCB915185CDB128BF7D0D"/>
+            </EntityType>
+            <EntityType Name="ItensPedidoType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PedidoVenda"/>
+                    <PropertyRef Name="ItemPedidoVenda"/>
+                </Key>
+                <Property Name="PedidoVenda" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Documento de vendas" sap:heading="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ItemPedidoVenda" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="Item" sap:heading="" sap:quickinfo="Item do documento de vendas"/>
+                <Property Name="TipoPedidoVenda" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Tipo doc.vendas" sap:heading="" sap:quickinfo="Tipo de documento de vendas"/>
+                <Property Name="OrganizacaoVendas" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Organização vendas" sap:heading="" sap:quickinfo="Organização de vendas"/>
+                <Property Name="CanalDistribuicao" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Canal distribuição" sap:heading="" sap:quickinfo="Canal de distribuição"/>
+                <Property Name="SetorAtividade" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Setor de atividade" sap:heading=""/>
+                <Property Name="Cliente" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Emissor da ordem" sap:heading=""/>
+                <Property Name="NomeCliente" Type="Edm.String" MaxLength="35" sap:label="Nome" sap:heading="" sap:quickinfo="Nome 1"/>
+                <Property Name="ReferenciaCliente" Type="Edm.String" MaxLength="20" sap:label="Referência cliente" sap:heading="" sap:quickinfo="Referência de cliente"/>
+                <Property Name="DataPedido" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Data do documento" sap:heading="" sap:quickinfo="Data do documento (data de entrada/saída)"/>
+                <Property Name="DataEntregaSolicitada" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Data solic.remessa" sap:heading="" sap:quickinfo="Data desejada de remessa"/>
+                <Property Name="CondicaoPagamento" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Condições pgto." sap:heading="" sap:quickinfo="Chave de condições de pagamento"/>
+                <Property Name="MotivoPedido" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Motivo da ordem" sap:heading="" sap:quickinfo="Motivo da ordem (motivo da transação comercial)"/>
+                <Property Name="Material" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Material" sap:heading="" sap:quickinfo="Nº do material"/>
+                <Property Name="DescricaoMaterial" Type="Edm.String" MaxLength="40" sap:label="Texto breve material" sap:heading="" sap:quickinfo="Texto breve de material"/>
+                <Property Name="DescricaoItem" Type="Edm.String" MaxLength="40" sap:label="Denominação de item" sap:heading="" sap:quickinfo="Texto breve do item da ordem do cliente"/>
+                <Property Name="QuantidadeSolicitada" Type="Edm.Decimal" Precision="15" Scale="3" sap:unit="VRKME" sap:label="Qtd.ordem" sap:heading="" sap:quickinfo="Quantidade da ordem acumulada em unidade de venda"/>
+                <Property Name="VRKME" Type="Edm.String" MaxLength="3" sap:label="Unidade de venda" sap:heading="" sap:semantics="unit-of-measure"/>
+                <Property Name="Centro" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Centro" sap:heading="" sap:quickinfo="Centro (próprio ou externo)"/>
+                <Property Name="Deposito" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Depósito" sap:heading=""/>
+                <Property Name="CategoriaItem" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Categoria do item" sap:heading="" sap:quickinfo="Categoria do item do documento de vendas e distribuição"/>
+                <Property Name="MotivoRejeicao" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Motivo de recusa" sap:heading="" sap:quickinfo="Motivo para rejeição de documentos de vendas"/>
+                <Property Name="ValorLiquidoItem" Type="Edm.Decimal" Precision="15" Scale="3" sap:unit="WAERK" sap:variable-scale="true" sap:label="Valor líquido" sap:heading="" sap:quickinfo="Valor líquido do item do documento em moeda do documento"/>
+                <Property Name="WAERK" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Moeda do documento" sap:heading="" sap:quickinfo="Moeda do documento SD" sap:semantics="currency-code"/>
+                <Property Name="CriadoPor" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Criado por" sap:heading="" sap:quickinfo="Nome do responsável que criou o objeto"/>
+                <Property Name="DataCriacao" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Criado em" sap:heading="" sap:quickinfo="Data de criação do registro"/>
+                <NavigationProperty Name="to_Overview" Relationship="cds_zui_sd_otc_monitor.assoc_B1B857DAC717E68992BE161F090C5673" FromRole="ToRole_assoc_B1B857DAC717E68992BE161F090C5673" ToRole="FromRole_assoc_B1B857DAC717E68992BE161F090C5673"/>
+            </EntityType>
+            <EntityType Name="MonitorOTCType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PedidoVenda"/>
+                </Key>
+                <Property Name="EnviarEmail_ac" Type="Edm.Boolean" sap:label="Ctrl.ação dinâmica" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="VerificarATP_ac" Type="Edm.Boolean" sap:label="Ctrl.ação dinâmica" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PedidoVenda" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Documento de vendas" sap:value-list="standard"/>
+                <Property Name="Cliente" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Emissor da ordem" sap:value-list="standard"/>
+                <Property Name="NomeCliente" Type="Edm.String" MaxLength="35" sap:label="Nome" sap:quickinfo="Nome 1"/>
+                <Property Name="StatusATP" Type="Edm.String" MaxLength="20"/>
+                <Property Name="Semaforo" Type="Edm.String" MaxLength="10"/>
+                <Property Name="ValorLiquido" Type="Edm.Decimal" Precision="15" Scale="3" sap:unit="Moeda" sap:variable-scale="true" sap:label="Valor líquido" sap:quickinfo="Valor líquido do documento de vendas em moeda do documento"/>
+                <Property Name="EtapaAtual" Type="Edm.String" MaxLength="30"/>
+                <Property Name="DataPedido" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Data do documento" sap:quickinfo="Data do documento (data de entrada/saída)"/>
+                <Property Name="StatusPedido" Type="Edm.String" MaxLength="30"/>
+                <Property Name="TipoPedidoVenda" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Tipo doc.vendas" sap:quickinfo="Tipo de documento de vendas"/>
+                <Property Name="ReferenciaCliente" Type="Edm.String" MaxLength="20" sap:label="Referência cliente" sap:quickinfo="Referência de cliente"/>
+                <Property Name="Moeda" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Moeda do documento" sap:quickinfo="Moeda do documento SD" sap:semantics="currency-code"/>
+                <Property Name="QuantidadeItens" Type="Edm.Int32"/>
+                <Property Name="NumeroEntrega" Type="Edm.String" MaxLength="10"/>
+                <Property Name="StatusEntrega" Type="Edm.String" MaxLength="20"/>
+                <Property Name="StatusPGI" Type="Edm.String" MaxLength="20"/>
+                <Property Name="NumeroFatura" Type="Edm.String" MaxLength="10"/>
+                <Property Name="DocumentoFI" Type="Edm.String" MaxLength="10"/>
+                <Property Name="OrganizacaoVendas" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Organização vendas" sap:quickinfo="Organização de vendas" sap:value-list="standard"/>
+                <Property Name="CanalDistribuicao" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Canal distribuição" sap:quickinfo="Canal de distribuição" sap:value-list="standard"/>
+                <Property Name="SetorAtividade" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Setor de atividade" sap:value-list="standard"/>
+                <Property Name="DataCriacao" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Criado em" sap:quickinfo="Data de criação do registro"/>
+                <Property Name="CriadoPor" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Criado por" sap:quickinfo="Nome do responsável que criou o objeto"/>
+                <Property Name="StatusPedidoTecnico" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Status global" sap:quickinfo="Status global de processamento (cabeçalho/todos os itens)"/>
+                <Property Name="QuantidadeEntregas" Type="Edm.Int32"/>
+                <Property Name="StatusPicking" Type="Edm.String" MaxLength="20"/>
+                <Property Name="DocumentoMaterial" Type="Edm.String" MaxLength="10"/>
+                <Property Name="QuantidadeFaturas" Type="Edm.Int32"/>
+                <Property Name="StatusContabilTecnico" Type="Edm.String" MaxLength="1"/>
+                <Property Name="StatusFaturamento" Type="Edm.String" MaxLength="20"/>
+                <Property Name="Criticidade" Type="Edm.Byte"/>
+                <Property Name="CriticidadeATP" Type="Edm.Byte"/>
+                <NavigationProperty Name="to_Disponibilidade" Relationship="cds_zui_sd_otc_monitor.assoc_A3FE093FECAFE17541314DA5BEAB3A0E" FromRole="FromRole_assoc_A3FE093FECAFE17541314DA5BEAB3A0E" ToRole="ToRole_assoc_A3FE093FECAFE17541314DA5BEAB3A0E"/>
+                <NavigationProperty Name="to_Entregas" Relationship="cds_zui_sd_otc_monitor.assoc_332227B758BCCB915185CDB128BF7D0D" FromRole="FromRole_assoc_332227B758BCCB915185CDB128BF7D0D" ToRole="ToRole_assoc_332227B758BCCB915185CDB128BF7D0D"/>
+                <NavigationProperty Name="to_Faturamentos" Relationship="cds_zui_sd_otc_monitor.assoc_582C86E155A3DF8EEC748B938E80827C" FromRole="FromRole_assoc_582C86E155A3DF8EEC748B938E80827C" ToRole="ToRole_assoc_582C86E155A3DF8EEC748B938E80827C"/>
+                <NavigationProperty Name="to_ItensPedido" Relationship="cds_zui_sd_otc_monitor.assoc_B1B857DAC717E68992BE161F090C5673" FromRole="FromRole_assoc_B1B857DAC717E68992BE161F090C5673" ToRole="ToRole_assoc_B1B857DAC717E68992BE161F090C5673"/>
+                <NavigationProperty Name="to_PickingPGI" Relationship="cds_zui_sd_otc_monitor.assoc_42ED87F0D62E1B83B64ABCFC0AF4E415" FromRole="FromRole_assoc_42ED87F0D62E1B83B64ABCFC0AF4E415" ToRole="ToRole_assoc_42ED87F0D62E1B83B64ABCFC0AF4E415"/>
+            </EntityType>
+            <EntityType Name="PickingPGIType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="NumeroEntrega"/>
+                    <PropertyRef Name="ItemEntrega"/>
+                </Key>
+                <Property Name="NumeroEntrega" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Remessa" sap:heading=""/>
+                <Property Name="ItemEntrega" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="Item" sap:heading="" sap:quickinfo="Item de remessa"/>
+                <Property Name="PedidoOrigem" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Documento referência" sap:heading="" sap:quickinfo="Nº documento do documento de referência" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ItemPedidoOrigem" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Item com.modelo" sap:heading="" sap:quickinfo="Nº item do item comercial modelo"/>
+                <Property Name="TipoEntrega" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Tipo de remessa" sap:heading=""/>
+                <Property Name="PontoExpedicao" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Local expedição" sap:heading="" sap:quickinfo="Local de expedição/ponto de recebimento"/>
+                <Property Name="Material" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Material" sap:heading="" sap:quickinfo="Nº do material"/>
+                <Property Name="Centro" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Centro" sap:heading=""/>
+                <Property Name="Deposito" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Depósito" sap:heading=""/>
+                <Property Name="Lote" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Lote" sap:heading="" sap:quickinfo="Número do lote"/>
+                <Property Name="QuantidadeEntrega" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="Unidade" sap:label="Qtd.remessa" sap:heading="" sap:quickinfo="Quantidade fornecida de fato, em UMV"/>
+                <Property Name="Unidade" Type="Edm.String" MaxLength="3" sap:label="Unidade de venda" sap:heading="" sap:semantics="unit-of-measure"/>
+                <Property Name="DataPlanejadaPGI" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Dt.plan.mov.mercad." sap:heading="" sap:quickinfo="Data planejada para o movimento de mercadoria"/>
+                <Property Name="DataRealPGI" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Dt.real mov.merc." sap:heading="" sap:quickinfo="Data real do movimento de mercadorias"/>
+                <Property Name="StatusPicking" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Status do picking" sap:heading="" sap:quickinfo="Status de picking/status de entrada em depósito (item)"/>
+                <Property Name="StatusPGI" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="St.mov.mercadorias" sap:heading="" sap:quickinfo="Status do movimento de mercadorias (item)"/>
+                <Property Name="StatusGeralPicking" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Status do picking" sap:heading="" sap:quickinfo="Status do picking/status entrada em depósito (todos itens)"/>
+                <Property Name="StatusGeralPGI" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="St.mov.mercadorias" sap:heading="" sap:quickinfo="Status do movimento de mercadorias (todos os itens)"/>
+                <Property Name="DocumentoMaterial" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Doc.subsequente" sap:heading="" sap:quickinfo="Documento de vendas e distribuição subsequente"/>
+                <Property Name="AnoDocumentoMaterial" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Ano doc.material" sap:heading="" sap:quickinfo="Ano do documento do material"/>
+                <Property Name="BloqueioEntrega" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Bloqueio remessa" sap:heading="" sap:quickinfo="Bloqueio da remessa (cabeçalho do documento)"/>
+                <Property Name="CriticidadePicking" Type="Edm.Byte"/>
+                <Property Name="CriticidadePGI" Type="Edm.Byte"/>
+                <Property Name="CriticidadePickingGeral" Type="Edm.Byte"/>
+                <Property Name="CriticidadePGIGeral" Type="Edm.Byte"/>
+                <Property Name="CriticidadeBloqueio" Type="Edm.Byte"/>
+                <Property Name="CategoriaItemEntrega" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Categoria do item" sap:quickinfo="Ctg.item de remessa"/>
+                <Property Name="TipoMovimento" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Tipo de movimento" sap:quickinfo="Tipo de movimento (administração de estoques)"/>
+                <Property Name="TipoPedidoOrigem" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Tipo doc.vendas" sap:quickinfo="Tipo de documento de vendas"/>
+                <Property Name="MotivoRejeicaoPedido" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Motivo de recusa" sap:quickinfo="Motivo para rejeição de documentos de vendas"/>
+                <Property Name="CategoriaDocumentoMaterial" Type="Edm.String" MaxLength="4" sap:label="Ctg.doc.subsequente" sap:quickinfo="Categoria de documento subsequente"/>
+                <NavigationProperty Name="to_Overview" Relationship="cds_zui_sd_otc_monitor.assoc_42ED87F0D62E1B83B64ABCFC0AF4E415" FromRole="ToRole_assoc_42ED87F0D62E1B83B64ABCFC0AF4E415" ToRole="FromRole_assoc_42ED87F0D62E1B83B64ABCFC0AF4E415"/>
+            </EntityType>
+            <EntityType Name="TempoAtualType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="IdHistorico"/>
+                </Key>
+                <Property Name="IdHistorico" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 byte UUID in 16 bytes (raw format)"/>
+                <Property Name="PedidoVenda" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Documento de vendas"/>
+                <Property Name="Sequencia" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative"/>
+                <Property Name="DataCriacao" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Criado em" sap:quickinfo="Data de criação do registro"/>
+                <Property Name="HoraCriacao" Type="Edm.Time" Precision="0" sap:label="Hora registro" sap:quickinfo="Hora do registro"/>
+                <Property Name="CriadoPor" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Criado por" sap:quickinfo="Nome do responsável que criou o objeto"/>
+                <Property Name="DataModificacao" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Modificado em" sap:quickinfo="Data da última modificação"/>
+                <Property Name="HoraModificacao" Type="Edm.Time" Precision="0" sap:label="Hora"/>
+                <Property Name="ModificadoPor" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Último modificador" sap:quickinfo="Usuário que modificou o documento comercial pela última vez"/>
+                <Property Name="DuracaoSegundos" Type="Edm.Int64"/>
+                <Property Name="DuracaoExtenso" Type="Edm.String" MaxLength="60"/>
+                <Property Name="RegistradoEm" Type="Edm.DateTimeOffset" Precision="7" sap:label="Registro da hora" sap:quickinfo="Registro hora UTC forma descritiva (AAAAMMDDhhmmssmmmuuun)"/>
+            </EntityType>
+            <EntityType Name="TempoPedidoType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PedidoVenda"/>
+                </Key>
+                <Property Name="PedidoVenda" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Documento de vendas"/>
+                <Property Name="DataCriacao" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Criado em" sap:quickinfo="Data de criação do registro"/>
+                <Property Name="HoraCriacao" Type="Edm.Time" Precision="0" sap:label="Hora registro" sap:quickinfo="Hora do registro"/>
+                <Property Name="CriadoPor" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Criado por" sap:quickinfo="Nome do responsável que criou o objeto"/>
+            </EntityType>
+            <EntityType Name="TempoHistoricoType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="IdHistorico"/>
+                </Key>
+                <Property Name="IdHistorico" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 byte UUID in 16 bytes (raw format)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PedidoVenda" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Documento de vendas"/>
+                <Property Name="Sequencia" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DataCriacao" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Criado em" sap:quickinfo="Data de criação do registro" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="HoraCriacao" Type="Edm.Time" Precision="0" sap:label="Hora registro" sap:quickinfo="Hora do registro" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CriadoPor" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Criado por" sap:quickinfo="Nome do responsável que criou o objeto" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DataModificacao" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Modificado em" sap:quickinfo="Data da última modificação"/>
+                <Property Name="HoraModificacao" Type="Edm.Time" Precision="0" sap:label="Hora"/>
+                <Property Name="ModificadoPor" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Último modificador" sap:quickinfo="Usuário que modificou o documento comercial pela última vez" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DuracaoSegundos" Type="Edm.Int64" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DuracaoExtenso" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="RegistradoEm" Type="Edm.DateTimeOffset" Precision="7" sap:label="Registro da hora" sap:quickinfo="Registro hora UTC forma descritiva (AAAAMMDDhhmmssmmmuuun)" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="ZI_VH_SD_CANAL_DISTType" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CanalDistribuicao"/>
+                </Key>
+                <Property Name="CanalDistribuicao" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Canal distribuição" sap:heading="" sap:quickinfo="Canal de distribuição"/>
+                <Property Name="Descricao" Type="Edm.String" MaxLength="20" sap:label="Denominação" sap:heading=""/>
+            </EntityType>
+            <EntityType Name="ZI_VH_SD_CLIENTEType" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Cliente"/>
+                </Key>
+                <Property Name="Cliente" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Cliente" sap:heading="" sap:quickinfo="Nº cliente"/>
+                <Property Name="NomeCliente" Type="Edm.String" MaxLength="35" sap:label="Nome" sap:heading="" sap:quickinfo="Nome 1"/>
+            </EntityType>
+            <EntityType Name="ZI_VH_SD_ORG_VENDASType" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="OrganizacaoVendas"/>
+                </Key>
+                <Property Name="OrganizacaoVendas" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Organização vendas" sap:heading="" sap:quickinfo="Organização de vendas"/>
+                <Property Name="Descricao" Type="Edm.String" MaxLength="20" sap:label="Denominação" sap:heading=""/>
+            </EntityType>
+            <EntityType Name="ZI_VH_SD_PEDIDOType" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PedidoVenda"/>
+                </Key>
+                <Property Name="PedidoVenda" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Documento de vendas" sap:heading=""/>
+                <Property Name="TipoPedidoVenda" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Tipo doc.vendas" sap:heading="" sap:quickinfo="Tipo de documento de vendas"/>
+                <Property Name="Cliente" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Emissor da ordem" sap:heading=""/>
+                <Property Name="DataCriacao" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Criado em" sap:heading="" sap:quickinfo="Data de criação do registro"/>
+            </EntityType>
+            <EntityType Name="ZI_VH_SD_SETOR_ATIVIDADEType" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SetorAtividade"/>
+                </Key>
+                <Property Name="SetorAtividade" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Setor de atividade" sap:heading=""/>
+                <Property Name="Descricao" Type="Edm.String" MaxLength="20" sap:label="Denominação" sap:heading=""/>
+            </EntityType>
+            <EntityType Name="SAP__Currency" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CurrencyCode"/>
+                </Key>
+                <Property Name="CurrencyCode" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Moeda" sap:semantics="currency-code"/>
+                <Property Name="ISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Código ISO"/>
+                <Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Texto breve"/>
+                <Property Name="DecimalPlaces" Type="Edm.Byte" Nullable="false" sap:label="Decimais"/>
+            </EntityType>
+            <EntityType Name="SAP__UnitOfMeasure" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UnitCode"/>
+                </Key>
+                <Property Name="UnitCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Unid.medida interna" sap:semantics="unit-of-measure"/>
+                <Property Name="ISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Código ISO"/>
+                <Property Name="ExternalCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Apresentação comerc."/>
+                <Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Texto UM"/>
+                <Property Name="DecimalPlaces" Type="Edm.Int16" sap:label="Casas decimais"/>
+            </EntityType>
+            <EntityType Name="SAP__DocumentDescription" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="GUID"/>
+                <Property Name="CreatedBy" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="CreatedAt" Type="Edm.DateTime" Nullable="false" Precision="0" sap:label="Registro da hora"/>
+                <Property Name="FileName" Type="Edm.String" Nullable="false" MaxLength="256"/>
+                <Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="256"/>
+                <NavigationProperty Name="Format" Relationship="cds_zui_sd_otc_monitor.to_format" FromRole="FromRole_to_format" ToRole="ToRole_to_format"/>
+                <NavigationProperty Name="TableColumns" Relationship="cds_zui_sd_otc_monitor.to_tablecolumns" FromRole="FromRole_to_tablecolumns" ToRole="ToRole_to_tablecolumns"/>
+                <NavigationProperty Name="CoverPage" Relationship="cds_zui_sd_otc_monitor.to_coverpage" FromRole="FromRole_to_coverpage" ToRole="ToRole_to_coverpage"/>
+                <NavigationProperty Name="Signature" Relationship="cds_zui_sd_otc_monitor.to_signature" FromRole="FromRole_to_signature" ToRole="ToRole_to_signature"/>
+                <NavigationProperty Name="PDFStandard" Relationship="cds_zui_sd_otc_monitor.to_pdfstandard" FromRole="FromRole_to_pdfstandard" ToRole="ToRole_to_pdfstandard"/>
+                <NavigationProperty Name="Hierarchy" Relationship="cds_zui_sd_otc_monitor.to_Hierarchy" FromRole="FromRole_to_Hierarchy" ToRole="ToRole_to_Hierarchy"/>
+                <NavigationProperty Name="Header" Relationship="cds_zui_sd_otc_monitor.to_header" FromRole="FromRole_to_header" ToRole="ToRole_to_header"/>
+                <NavigationProperty Name="Footer" Relationship="cds_zui_sd_otc_monitor.to_Footer" FromRole="FromRole_to_Footer" ToRole="ToRole_to_Footer"/>
+            </EntityType>
+            <EntityType Name="SAP__Format" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="FitToPage" Type="cds_zui_sd_otc_monitor.SAP__FitToPage" Nullable="false"/>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FontSize" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Orientation" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PaperSize" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BorderSize" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MarginSize" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FontName" Type="Edm.String" Nullable="false" MaxLength="255" sap:label="Font Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Padding" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SAP__PDFStandard" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UsePDFAConformance" Type="Edm.Boolean" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DoEnableAccessibility" Type="Edm.Boolean" Nullable="false" sap:label="Código" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SAP__TableColumns" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                    <PropertyRef Name="Name"/>
+                    <PropertyRef Name="Header"/>
+                </Key>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Header" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="HorizontalAlignment" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SAP__CoverPage" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Title"/>
+                    <PropertyRef Name="Id"/>
+                    <PropertyRef Name="Name"/>
+                </Key>
+                <Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Value" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SAP__Signature" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DoSign" Type="Edm.Boolean" Nullable="false" sap:label="Código" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Reason" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SAP__Hierarchy" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DistanceFromRootElement" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DrillStateElement" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SAP__PDFHeader" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Right" Type="cds_zui_sd_otc_monitor.SAP__HeaderFooterField" Nullable="false"/>
+                <Property Name="Left" Type="cds_zui_sd_otc_monitor.SAP__HeaderFooterField" Nullable="false"/>
+                <Property Name="Center" Type="cds_zui_sd_otc_monitor.SAP__HeaderFooterField" Nullable="false"/>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SAP__PDFFooter" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Right" Type="cds_zui_sd_otc_monitor.SAP__HeaderFooterField" Nullable="false"/>
+                <Property Name="Left" Type="cds_zui_sd_otc_monitor.SAP__HeaderFooterField" Nullable="false"/>
+                <Property Name="Center" Type="cds_zui_sd_otc_monitor.SAP__HeaderFooterField" Nullable="false"/>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SAP__ValueHelp" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="VALUEHELP"/>
+                </Key>
+                <Property Name="VALUEHELP" Type="Edm.String" Nullable="false"/>
+                <Property Name="FIELD_VALUE" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="DESCRIPTION" Type="Edm.String"/>
+            </EntityType>
+            <ComplexType Name="SAP__FitToPage">
+                <Property Name="ErrorRecoveryBehavior" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Error behavior" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsEnabled" Type="Edm.Boolean" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MinimumFontSize" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <ComplexType Name="SAP__HeaderFooterField">
+                <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <Association Name="to_format" sap:content-version="1">
+                <End Type="cds_zui_sd_otc_monitor.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_format"/>
+                <End Type="cds_zui_sd_otc_monitor.SAP__Format" Multiplicity="1" Role="ToRole_to_format"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_to_format">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_to_format">
+                        <PropertyRef Name="Id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="to_tablecolumns" sap:content-version="1">
+                <End Type="cds_zui_sd_otc_monitor.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_tablecolumns"/>
+                <End Type="cds_zui_sd_otc_monitor.SAP__TableColumns" Multiplicity="*" Role="ToRole_to_tablecolumns"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_to_tablecolumns">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_to_tablecolumns">
+                        <PropertyRef Name="Id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="to_coverpage" sap:content-version="1">
+                <End Type="cds_zui_sd_otc_monitor.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_coverpage"/>
+                <End Type="cds_zui_sd_otc_monitor.SAP__CoverPage" Multiplicity="*" Role="ToRole_to_coverpage"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_to_coverpage">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_to_coverpage">
+                        <PropertyRef Name="Id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="to_signature" sap:content-version="1">
+                <End Type="cds_zui_sd_otc_monitor.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_signature"/>
+                <End Type="cds_zui_sd_otc_monitor.SAP__Signature" Multiplicity="1" Role="ToRole_to_signature"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_to_signature">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_to_signature">
+                        <PropertyRef Name="Id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="to_pdfstandard" sap:content-version="1">
+                <End Type="cds_zui_sd_otc_monitor.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_pdfstandard"/>
+                <End Type="cds_zui_sd_otc_monitor.SAP__PDFStandard" Multiplicity="1" Role="ToRole_to_pdfstandard"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_to_pdfstandard">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_to_pdfstandard">
+                        <PropertyRef Name="Id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="to_Hierarchy" sap:content-version="1">
+                <End Type="cds_zui_sd_otc_monitor.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_Hierarchy"/>
+                <End Type="cds_zui_sd_otc_monitor.SAP__Hierarchy" Multiplicity="1" Role="ToRole_to_Hierarchy"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_to_Hierarchy">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_to_Hierarchy">
+                        <PropertyRef Name="Id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="to_header" sap:content-version="1">
+                <End Type="cds_zui_sd_otc_monitor.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_header"/>
+                <End Type="cds_zui_sd_otc_monitor.SAP__PDFHeader" Multiplicity="1" Role="ToRole_to_header"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_to_header">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_to_header">
+                        <PropertyRef Name="Id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="to_Footer" sap:content-version="1">
+                <End Type="cds_zui_sd_otc_monitor.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_Footer"/>
+                <End Type="cds_zui_sd_otc_monitor.SAP__PDFFooter" Multiplicity="1" Role="ToRole_to_Footer"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_to_Footer">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_to_Footer">
+                        <PropertyRef Name="Id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_332227B758BCCB915185CDB128BF7D0D" sap:content-version="1">
+                <End Type="cds_zui_sd_otc_monitor.MonitorOTCType" Multiplicity="1" Role="FromRole_assoc_332227B758BCCB915185CDB128BF7D0D">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <End Type="cds_zui_sd_otc_monitor.EntregasType" Multiplicity="*" Role="ToRole_assoc_332227B758BCCB915185CDB128BF7D0D"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_assoc_332227B758BCCB915185CDB128BF7D0D">
+                        <PropertyRef Name="PedidoVenda"/>
+                    </Principal>
+                    <Dependent Role="ToRole_assoc_332227B758BCCB915185CDB128BF7D0D">
+                        <PropertyRef Name="PedidoVenda"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_582C86E155A3DF8EEC748B938E80827C" sap:content-version="1">
+                <End Type="cds_zui_sd_otc_monitor.MonitorOTCType" Multiplicity="1" Role="FromRole_assoc_582C86E155A3DF8EEC748B938E80827C">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <End Type="cds_zui_sd_otc_monitor.FaturamentosType" Multiplicity="*" Role="ToRole_assoc_582C86E155A3DF8EEC748B938E80827C"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_assoc_582C86E155A3DF8EEC748B938E80827C">
+                        <PropertyRef Name="PedidoVenda"/>
+                    </Principal>
+                    <Dependent Role="ToRole_assoc_582C86E155A3DF8EEC748B938E80827C">
+                        <PropertyRef Name="PedidoVenda"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_B1B857DAC717E68992BE161F090C5673" sap:content-version="1">
+                <End Type="cds_zui_sd_otc_monitor.MonitorOTCType" Multiplicity="1" Role="FromRole_assoc_B1B857DAC717E68992BE161F090C5673">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <End Type="cds_zui_sd_otc_monitor.ItensPedidoType" Multiplicity="*" Role="ToRole_assoc_B1B857DAC717E68992BE161F090C5673"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_assoc_B1B857DAC717E68992BE161F090C5673">
+                        <PropertyRef Name="PedidoVenda"/>
+                    </Principal>
+                    <Dependent Role="ToRole_assoc_B1B857DAC717E68992BE161F090C5673">
+                        <PropertyRef Name="PedidoVenda"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_42ED87F0D62E1B83B64ABCFC0AF4E415" sap:content-version="1">
+                <End Type="cds_zui_sd_otc_monitor.MonitorOTCType" Multiplicity="1" Role="FromRole_assoc_42ED87F0D62E1B83B64ABCFC0AF4E415">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <End Type="cds_zui_sd_otc_monitor.PickingPGIType" Multiplicity="*" Role="ToRole_assoc_42ED87F0D62E1B83B64ABCFC0AF4E415"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_assoc_42ED87F0D62E1B83B64ABCFC0AF4E415">
+                        <PropertyRef Name="PedidoVenda"/>
+                    </Principal>
+                    <Dependent Role="ToRole_assoc_42ED87F0D62E1B83B64ABCFC0AF4E415">
+                        <PropertyRef Name="PedidoOrigem"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_A3FE093FECAFE17541314DA5BEAB3A0E" sap:content-version="1">
+                <End Type="cds_zui_sd_otc_monitor.MonitorOTCType" Multiplicity="1" Role="FromRole_assoc_A3FE093FECAFE17541314DA5BEAB3A0E">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <End Type="cds_zui_sd_otc_monitor.DisponibilidadeType" Multiplicity="*" Role="ToRole_assoc_A3FE093FECAFE17541314DA5BEAB3A0E"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_assoc_A3FE093FECAFE17541314DA5BEAB3A0E">
+                        <PropertyRef Name="PedidoVenda"/>
+                    </Principal>
+                    <Dependent Role="ToRole_assoc_A3FE093FECAFE17541314DA5BEAB3A0E">
+                        <PropertyRef Name="PedidoVenda"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="cds_zui_sd_otc_monitor_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx pdf">
+                <EntitySet Name="SAP__Currencies" EntityType="cds_zui_sd_otc_monitor.SAP__Currency" sap:content-version="1"/>
+                <EntitySet Name="SAP__UnitsOfMeasure" EntityType="cds_zui_sd_otc_monitor.SAP__UnitOfMeasure" sap:content-version="1"/>
+                <EntitySet Name="SAP__MyDocumentDescriptions" EntityType="cds_zui_sd_otc_monitor.SAP__DocumentDescription" sap:content-version="1"/>
+                <EntitySet Name="SAP__FormatSet" EntityType="cds_zui_sd_otc_monitor.SAP__Format" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SAP__PDFStandardSet" EntityType="cds_zui_sd_otc_monitor.SAP__PDFStandard" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SAP__TableColumnsSet" EntityType="cds_zui_sd_otc_monitor.SAP__TableColumns" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SAP__CoverPageSet" EntityType="cds_zui_sd_otc_monitor.SAP__CoverPage" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SAP__SignatureSet" EntityType="cds_zui_sd_otc_monitor.SAP__Signature" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SAP__HierarchySet" EntityType="cds_zui_sd_otc_monitor.SAP__Hierarchy" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SAP__PDFHeaderSet" EntityType="cds_zui_sd_otc_monitor.SAP__PDFHeader" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SAP__PDFFooterSet" EntityType="cds_zui_sd_otc_monitor.SAP__PDFFooter" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SAP__ValueHelpSet" EntityType="cds_zui_sd_otc_monitor.SAP__ValueHelp" sap:content-version="1"/>
+                <EntitySet Name="Disponibilidade" EntityType="cds_zui_sd_otc_monitor.DisponibilidadeType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="Faturamentos" EntityType="cds_zui_sd_otc_monitor.FaturamentosType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="Entregas" EntityType="cds_zui_sd_otc_monitor.EntregasType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ItensPedido" EntityType="cds_zui_sd_otc_monitor.ItensPedidoType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="MonitorOTC" EntityType="cds_zui_sd_otc_monitor.MonitorOTCType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="PickingPGI" EntityType="cds_zui_sd_otc_monitor.PickingPGIType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="TempoAtual" EntityType="cds_zui_sd_otc_monitor.TempoAtualType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="TempoPedido" EntityType="cds_zui_sd_otc_monitor.TempoPedidoType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="TempoHistorico" EntityType="cds_zui_sd_otc_monitor.TempoHistoricoType" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZI_VH_SD_CANAL_DIST" EntityType="cds_zui_sd_otc_monitor.ZI_VH_SD_CANAL_DISTType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZI_VH_SD_CLIENTE" EntityType="cds_zui_sd_otc_monitor.ZI_VH_SD_CLIENTEType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZI_VH_SD_ORG_VENDAS" EntityType="cds_zui_sd_otc_monitor.ZI_VH_SD_ORG_VENDASType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZI_VH_SD_PEDIDO" EntityType="cds_zui_sd_otc_monitor.ZI_VH_SD_PEDIDOType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZI_VH_SD_SETOR_ATIVIDADE" EntityType="cds_zui_sd_otc_monitor.ZI_VH_SD_SETOR_ATIVIDADEType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <AssociationSet Name="to_FooterSet" Association="cds_zui_sd_otc_monitor.to_Footer" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_Footer"/>
+                    <End EntitySet="SAP__PDFFooterSet" Role="ToRole_to_Footer"/>
+                </AssociationSet>
+                <AssociationSet Name="to_headerSet" Association="cds_zui_sd_otc_monitor.to_header" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_header"/>
+                    <End EntitySet="SAP__PDFHeaderSet" Role="ToRole_to_header"/>
+                </AssociationSet>
+                <AssociationSet Name="to_formatSet" Association="cds_zui_sd_otc_monitor.to_format" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_format"/>
+                    <End EntitySet="SAP__FormatSet" Role="ToRole_to_format"/>
+                </AssociationSet>
+                <AssociationSet Name="to_pdfstandardSet" Association="cds_zui_sd_otc_monitor.to_pdfstandard" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_pdfstandard"/>
+                    <End EntitySet="SAP__PDFStandardSet" Role="ToRole_to_pdfstandard"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_42ED87F0D62E1B83B64ABCFC0AF4E415" Association="cds_zui_sd_otc_monitor.assoc_42ED87F0D62E1B83B64ABCFC0AF4E415" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="MonitorOTC" Role="FromRole_assoc_42ED87F0D62E1B83B64ABCFC0AF4E415"/>
+                    <End EntitySet="PickingPGI" Role="ToRole_assoc_42ED87F0D62E1B83B64ABCFC0AF4E415"/>
+                </AssociationSet>
+                <AssociationSet Name="to_tablecolumnsSet" Association="cds_zui_sd_otc_monitor.to_tablecolumns" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_tablecolumns"/>
+                    <End EntitySet="SAP__TableColumnsSet" Role="ToRole_to_tablecolumns"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_A3FE093FECAFE17541314DA5BEAB3A0E" Association="cds_zui_sd_otc_monitor.assoc_A3FE093FECAFE17541314DA5BEAB3A0E" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="MonitorOTC" Role="FromRole_assoc_A3FE093FECAFE17541314DA5BEAB3A0E"/>
+                    <End EntitySet="Disponibilidade" Role="ToRole_assoc_A3FE093FECAFE17541314DA5BEAB3A0E"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_B1B857DAC717E68992BE161F090C5673" Association="cds_zui_sd_otc_monitor.assoc_B1B857DAC717E68992BE161F090C5673" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="MonitorOTC" Role="FromRole_assoc_B1B857DAC717E68992BE161F090C5673"/>
+                    <End EntitySet="ItensPedido" Role="ToRole_assoc_B1B857DAC717E68992BE161F090C5673"/>
+                </AssociationSet>
+                <AssociationSet Name="to_signatureSet" Association="cds_zui_sd_otc_monitor.to_signature" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_signature"/>
+                    <End EntitySet="SAP__SignatureSet" Role="ToRole_to_signature"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_332227B758BCCB915185CDB128BF7D0D" Association="cds_zui_sd_otc_monitor.assoc_332227B758BCCB915185CDB128BF7D0D" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="MonitorOTC" Role="FromRole_assoc_332227B758BCCB915185CDB128BF7D0D"/>
+                    <End EntitySet="Entregas" Role="ToRole_assoc_332227B758BCCB915185CDB128BF7D0D"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_582C86E155A3DF8EEC748B938E80827C" Association="cds_zui_sd_otc_monitor.assoc_582C86E155A3DF8EEC748B938E80827C" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="MonitorOTC" Role="FromRole_assoc_582C86E155A3DF8EEC748B938E80827C"/>
+                    <End EntitySet="Faturamentos" Role="ToRole_assoc_582C86E155A3DF8EEC748B938E80827C"/>
+                </AssociationSet>
+                <AssociationSet Name="to_coverpageSet" Association="cds_zui_sd_otc_monitor.to_coverpage" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_coverpage"/>
+                    <End EntitySet="SAP__CoverPageSet" Role="ToRole_to_coverpage"/>
+                </AssociationSet>
+                <AssociationSet Name="to_HierarchySet" Association="cds_zui_sd_otc_monitor.to_Hierarchy" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_Hierarchy"/>
+                    <End EntitySet="SAP__HierarchySet" Role="ToRole_to_Hierarchy"/>
+                </AssociationSet>
+                <FunctionImport Name="EnviarEmail" ReturnType="cds_zui_sd_otc_monitor.MonitorOTCType" EntitySet="MonitorOTC" m:HttpMethod="POST" sap:action-for="cds_zui_sd_otc_monitor.MonitorOTCType" sap:applicable-path="EnviarEmail_ac">
+                    <Parameter Name="PedidoVenda" Type="Edm.String" Mode="In" MaxLength="10" sap:label="Documento de vendas"/>
+                    <Parameter Name="EmailDestinatario" Type="Edm.String" Mode="In" MaxLength="255" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="VerificarATP" ReturnType="cds_zui_sd_otc_monitor.MonitorOTCType" EntitySet="MonitorOTC" m:HttpMethod="POST" sap:action-for="cds_zui_sd_otc_monitor.MonitorOTCType" sap:applicable-path="VerificarATP_ac">
+                    <Parameter Name="PedidoVenda" Type="Edm.String" Mode="In" MaxLength="10" sap:label="Documento de vendas"/>
+                </FunctionImport>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zui_sd_otc_monitor.MonitorOTCType/PedidoVenda" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Documento de vendas"/>
+                        <PropertyValue Property="CollectionPath" String="ZI_VH_SD_PEDIDO"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="PedidoVenda"/>
+                                    <PropertyValue Property="ValueListProperty" String="PedidoVenda"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="TipoPedidoVenda"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Cliente"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="DataCriacao"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.MonitorOTCType/Cliente" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Emissor da ordem"/>
+                        <PropertyValue Property="CollectionPath" String="ZI_VH_SD_CLIENTE"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Cliente"/>
+                                    <PropertyValue Property="ValueListProperty" String="Cliente"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="NomeCliente"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.MonitorOTCType/OrganizacaoVendas" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Organização vendas"/>
+                        <PropertyValue Property="CollectionPath" String="ZI_VH_SD_ORG_VENDAS"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="OrganizacaoVendas"/>
+                                    <PropertyValue Property="ValueListProperty" String="OrganizacaoVendas"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Descricao"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.MonitorOTCType/CanalDistribuicao" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Canal distribuição"/>
+                        <PropertyValue Property="CollectionPath" String="ZI_VH_SD_CANAL_DIST"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="CanalDistribuicao"/>
+                                    <PropertyValue Property="ValueListProperty" String="CanalDistribuicao"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Descricao"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.MonitorOTCType/SetorAtividade" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Setor de atividade"/>
+                        <PropertyValue Property="CollectionPath" String="ZI_VH_SD_SETOR_ATIVIDADE"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SetorAtividade"/>
+                                    <PropertyValue Property="ValueListProperty" String="SetorAtividade"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Descricao"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.cds_zui_sd_otc_monitor_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.MonitorOTCType/to_Disponibilidade" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Composition"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.MonitorOTCType/to_Entregas" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Composition"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.MonitorOTCType/to_Faturamentos" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Composition"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.MonitorOTCType/to_ItensPedido" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Composition"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.MonitorOTCType/to_PickingPGI" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Composition"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.TempoHistoricoType/DataModificacao" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.TempoHistoricoType/HoraModificacao" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.TempoHistoricoType/PedidoVenda" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.cds_zui_sd_otc_monitor_Entities/MonitorOTC" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>EnviarEmail_ac</PropertyPath>
+                                <PropertyPath>VerificarATP_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Disponibilidade"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Entregas"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Faturamentos"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_ItensPedido"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_PickingPGI"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>EnviarEmail_ac</PropertyPath>
+                                <PropertyPath>VerificarATP_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.cds_zui_sd_otc_monitor_Entities/Disponibilidade" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Overview"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.cds_zui_sd_otc_monitor_Entities/Entregas" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Overview"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.cds_zui_sd_otc_monitor_Entities/Faturamentos" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Overview"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.cds_zui_sd_otc_monitor_Entities/ItensPedido" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Overview"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.cds_zui_sd_otc_monitor_Entities/PickingPGI" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Overview"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.cds_zui_sd_otc_monitor_Entities/TempoHistorico" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.DisponibilidadeType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>DivisaoRemessa</PropertyPath>
+                        <PropertyPath>ItemPedidoVenda</PropertyPath>
+                        <PropertyPath>PedidoVenda</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.EntregasType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>ItemEntrega</PropertyPath>
+                        <PropertyPath>NumeroEntrega</PropertyPath>
+                        <PropertyPath>ItemPedidoVenda</PropertyPath>
+                        <PropertyPath>PedidoVenda</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.FaturamentosType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>ItemFatura</PropertyPath>
+                        <PropertyPath>NumeroFatura</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.ItensPedidoType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>ItemPedidoVenda</PropertyPath>
+                        <PropertyPath>PedidoVenda</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.MonitorOTCType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>PedidoVenda</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.PickingPGIType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>ItemEntrega</PropertyPath>
+                        <PropertyPath>NumeroEntrega</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.cds_zui_sd_otc_monitor_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+                    <Record Type="Org.OData.Capabilities.V1.BatchSupportType">
+                        <PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.CurrencyCodes">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__Currencies"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.UnitsOfMeasure">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__UnitsOfMeasure"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="./$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="SAP__MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="Padding" Bool="true"/>
+                        <PropertyValue Property="HeaderFooter" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.SAP__DocumentDescription">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__MyDocumentDescriptions"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.SAP__Currency/CurrencyCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.Text" Path="Text"/>
+                <Annotation Term="SAP__common.UnitSpecificScale" Path="DecimalPlaces"/>
+                <Annotation Term="SAP__CodeList.StandardCode" Path="ISOCode"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.SAP__UnitOfMeasure/UnitCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.Text" Path="Text"/>
+                <Annotation Term="SAP__common.UnitSpecificScale" Path="DecimalPlaces"/>
+                <Annotation Term="SAP__CodeList.StandardCode" Path="ISOCode"/>
+                <Annotation Term="SAP__CodeList.ExternalCode" Path="ExternalCode"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.SAP__UnitOfMeasure" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.AlternateKeys">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Key">
+                                <Collection>
+                                    <Record>
+                                        <PropertyValue Property="Name" Path="ExternalCode"/>
+                                        <PropertyValue Property="Alias" String="ExternalCode"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.SAP__DocumentDescription/CreatedBy" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.Computed"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.SAP__DocumentDescription/CreatedAt" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.Computed"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.SAP__DocumentDescription" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__capabilties.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilties.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilties.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilties.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Format/Orientation"/>
+                                    <PropertyValue Property="AllowedExpressions" String="Multivalue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Format/PaperSize"/>
+                                    <PropertyValue Property="AllowedExpressions" String="Multivalue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.SAP__Format/FitToPage/ErrorRecoveryBehavior" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="../../../../SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27ErrorRecoveryBehaviour%27"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.SAP__Format/FontName" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27FontName%27"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.SAP__Format/PaperSize" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27PaperSize%27"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.SAP__PDFHeader/Left" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27HeaderFooter%27"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.SAP__PDFHeader/Right" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27HeaderFooter%27"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.SAP__PDFHeader/Center" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27HeaderFooter%27"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.SAP__PDFFooter/Left" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27HeaderFooter%27"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.SAP__PDFFooter/Right" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27HeaderFooter%27"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.SAP__PDFFooter/Center" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27HeaderFooter%27"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.SAP__Format/Orientation" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27FontName%27"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_zui_sd_otc_monitor.SAP__TableColumns/HorizontalAlignment" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27HorizontalAlignment%27"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+            </Annotations>
+            <atom:link rel="self" href="https://ndc-srvhana.opus-idc.com.br:8100/sap/opu/odata/sap/ZUI_SD_OTC_MONITOR_O2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://ndc-srvhana.opus-idc.com.br:8100/sap/opu/odata/sap/ZUI_SD_OTC_MONITOR_O2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

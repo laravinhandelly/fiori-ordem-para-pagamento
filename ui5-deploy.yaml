@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: com.mooviordem.zui5.ordem.to.cash
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          url: https://ndc-s4hana.opus-idc.com.br:8100
+          client: '250'
+        app:
+          name: ZUI5ORDEMCASH
+          description: App Ordem to Cash
+          package: ZLMS_FLUXO_ORDER_TO_CASH
+          transport: S4HK912065
+        exclude:
+          - /test/

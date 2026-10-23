@@ -1,0 +1,227 @@
+{
+  "_version": "1.53.0",
+  "sap.app": {
+    "id": "com.mooviordem.zui5.ordem.to.cash",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.19.0",
+      "toolsId": "18abac20-1561-4739-b4ff-c754da95228b"
+    },
+    "dataSources": {
+      "ZUI_SD_OTC_MONITOR_O2_VAN": {
+        "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZUI_SD_OTC_MONITOR_O2_VAN',Version='0001')/$value/",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": "localService/mainService/ZUI_SD_OTC_MONITOR_O2_VAN.xml"
+        }
+      },
+      "annotation": {
+        "type": "ODataAnnotation",
+        "uri": "annotations/annotation.xml",
+        "settings": {
+          "localUri": "annotations/annotation.xml"
+        }
+      },
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZUI_SD_OTC_MONITOR_O2/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "ZUI_SD_OTC_MONITOR_O2_VAN",
+            "annotation"
+          ],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "/sap/bc/ui5_ui5/sap/zui5ordemcash/images/Logo.jpg",
+      "favIcon": "/sap/bc/ui5_ui5/sap/zui5ordemcash/images/Logo.jpg",
+      "phone": "/sap/bc/ui5_ui5/sap/zui5ordemcash/images/Logo.jpg",
+      "phone@2": "/sap/bc/ui5_ui5/sap/zui5ordemcash/images/Logo.jpg",
+      "tablet": "/sap/bc/ui5_ui5/sap/zui5ordemcash/images/Logo.jpg",
+      "tablet@2": "/sap/bc/ui5_ui5/sap/zui5ordemcash/images/Logo.jpg"
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.114.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ushell": {},
+        "sap.f": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.suite.ui.generic.template": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.mooviordem.zui5.ordem.to.cash.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "defaultCountMode": "Inline",
+          "refreshAfterChange": false,
+          "metadataUrlParams": {
+            "sap-value-list": "none"
+          }
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {},
+      "routes": [],
+      "targets": {}
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.suite.ui.generic.template.ListReport.view.ListReport": {
+            "controllerName": "com.mooviordem.zui5.ordem.to.cash.controller.ListReportExt",
+            "sap.ui.generic.app": {
+              "MonitorOTC": {
+                "EntitySet": "MonitorOTC",
+                "Actions": {
+                  "LimparSelecao": {
+                    "id": "btnLimparSelecao",
+                    "text": "Limpar Seleção",
+                    "tooltip": "Limpar Seleção de Pedidos",
+                    "press": "onLimparSelecaoCustom",
+                    "requiresSelection": true
+                  },
+                  "VerificarATPCustom": {
+                    "id": "btnVerificarATPCustom",
+                    "text": "Verificar ATP",
+                    "tooltip": "Verificar ATP",
+                    "press": "onVerificarATPCustom",
+                    "requiresSelection": true
+                  },
+                  "ControleTempo": {
+                    "id": "btnControleTempo",
+                    "text": "Controle de tempo",
+                    "tooltip": "Controle de tempo",
+                    "press": "onAbrirTempoProcesso",
+                    "requiresSelection": true
+                  },
+                  "ImprimirCustom": {
+                    "id": "btnImprimirCustom",
+                    "text": "Imprimir",
+                    "tooltip": "Imprimir",
+                    "press": "onImprimirCustom",
+                    "requiresSelection": true
+                  },
+                  "SendCustom": {
+                    "id": "btnSendCustom",
+                    "text": "Send",
+                    "tooltip": "Send",
+                    "press": "onSendCustom",
+                    "requiresSelection": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "sap.ui.viewExtensions": {
+          "sap.suite.ui.generic.template.ListReport.view.ListReport": {
+            "headerFacet": {
+              "className": "sap.ui.core.Fragment",
+              "fragmentName": "com.mooviordem.zui5.ordem.to.cash.ext.fragment.LogoRodape"
+            }
+          }
+        }
+      }
+    }
+  },
+  "sap.ui.generic.app": {
+    "_version": "1.3.0",
+    "settings": {
+      "forceGlobalRefresh": false,
+      "objectPageHeaderType": "Dynamic",
+      "considerAnalyticalParameters": true,
+      "showDraftToggle": false
+    },
+    "pages": {
+      "ListReport|MonitorOTC": {
+        "entitySet": "MonitorOTC",
+        "component": {
+          "name": "sap.suite.ui.generic.template.ListReport",
+          "list": true,
+          "settings": {
+            "dataLoadSettings": {
+              "loadDataOnAppLaunch": "always"
+            },
+            "liveMode": true,
+            "condensedTableLayout": true,
+            "smartVariantManagement": true,
+            "enableTableFilterInPageVariant": true,
+            "filterSettings": {
+              "dateSettings": {
+                "useDateRange": true
+              }
+            },
+            "tableSettings": {
+              "type": "AnalyticalTable",
+              "multiSelect": true,
+              "selectAll": true
+            }
+          }
+        },
+        "pages": {
+          "ObjectPage|MonitorOTC": {
+            "entitySet": "MonitorOTC",
+            "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
+            "component": {
+              "name": "sap.suite.ui.generic.template.ObjectPage"
+            }
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  }
+}
